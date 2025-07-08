@@ -1,5 +1,6 @@
 import Head from "next/head";
 
+// Komponen detail post
 export default function PostDetail({ post }) {
     if (!post) {
         return (
@@ -22,4 +23,39 @@ export default function PostDetail({ post }) {
             </div>
         </>
     );
+}
+
+// Ambil data post berdasarkan ID dari URL
+export async function getStaticProps(context) {
+    const { id } = context.params;
+
+    try {
+        const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+        const data = await res.json();
+
+        // Jika post tidak valid atau tidak ditemukan
+        if (!data || !data.id) {
+            return { notFound: true };
+        }
+
+        return {
+            props: {
+                post: {
+                    title: data.title,
+                    content: data.body,
+                    date: new Date().toISOString(), // karena API tidak punya tanggal
+                },
+            },
+        };
+    } catch (error) {
+        return { notFound: true };
+    }
+}
+
+// Konfigurasi dynamic routing agar bisa render saat diminta
+export async function getStaticPaths() {
+    return {
+        paths: [], // tidak perlu render semua post di awal
+        fallback: "blocking", // render saat ada request
+    };
 }
