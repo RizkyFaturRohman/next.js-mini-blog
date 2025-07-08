@@ -1,6 +1,14 @@
 import Head from "next/head";
 
 export default function PostDetail({ post }) {
+    if (!post) {
+        return (
+            <div className="max-w-2xl mx-auto py-8 px-4">
+                <h1 className="text-xl font-semibold text-red-500">Post not found</h1>
+            </div>
+        );
+    }
+
     return (
         <>
             <Head>
@@ -13,6 +21,5 @@ export default function PostDetail({ post }) {
                 <p className="text-sm text-gray-500">Posted on: {new Date(post.date).toLocaleDateString()}</p>
             </div>
         </>
-        
     );
 }
