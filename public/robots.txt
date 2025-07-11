@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://next-js-mini-blog-jho5f3nre-superrizky3456-gmailcoms-projects.vercel.app
+Host: https://next-js-mini-blog.vercel.app
 
 # Sitemaps
-Sitemap: https://next-js-mini-blog-jho5f3nre-superrizky3456-gmailcoms-projects.vercel.app/sitemap.xml
+Sitemap: https://next-js-mini-blog.vercel.app/sitemap.xml
