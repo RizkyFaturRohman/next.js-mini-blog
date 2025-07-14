@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { posts } from "../../data/posts";  // pastikan sudah ada data/posts.js
+import { posts } from "../../data/posts";  // ✅ pakai named import
 
 export default function PostDetail({ post }) {
   if (!post) {
@@ -38,12 +38,12 @@ export default function PostDetail({ post }) {
 
 export async function getStaticPaths() {
   const paths = posts.map((post) => ({
-    params: {id: post.id},
+    params: { id: post.id },
   }));
-  return {paths, fallback: false};
+  return { paths, fallback: false };
 }
 
-export async function getStaticProps({params}) {
-  const post = posts.find((p) => p.id === params.id);
-  return{props: {post}};
+export async function getStaticProps({ params }) {
+  const post = posts.find((p) => p.id === params.id) || null;
+  return { props: { post } };
 }
