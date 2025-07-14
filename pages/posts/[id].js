@@ -44,6 +44,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  const posts = posts.find((p) => p.id === params.id);
+  const post = posts.find((p) => p.id === params.id);
   return{props: {post}};
 }
