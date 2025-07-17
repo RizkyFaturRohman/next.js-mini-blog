@@ -1,21 +1,11 @@
-import Head from "next/head";
+// pages/_app.js
+import "../styles/globals.css";
+import Layout from "../components/Layout";
 
-export default function Layout({ children}) {
-    return (
-        <>
-            <Head>
-                <meta property="og:title" content="Next.js Mini Blog" />
-                <meta property="og:description" content="A simple blog built with Next.js" />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://next-js-mini-blog.vercel.app" />
-                <meta property="og:image" content="https://next-js-mini-blog.vercel.app/og-image.png" />
-                
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Next.js Mini Blog" />
-                <meta name="twitter:description" content="Blog sederhana dibuat dengan Next.js oleh Rizky" />
-                <meta name="twitter:image" content="https://next-js-mini-blog.vercel.app/og-image.png" />
-      </Head>
-      {children}
-    </>
+export default function App({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }

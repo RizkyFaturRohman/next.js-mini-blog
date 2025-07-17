@@ -16,6 +16,8 @@ export default function Layout({ children }) {
         <meta name="twitter:title" content="Next.js Mini Blog" />
         <meta name="twitter:description" content="Blog sederhana dibuat dengan Next.js oleh Rizky" />
         <meta name="twitter:image" content="https://next-js-mini-blog.vercel.app/og-image.png" />
+
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav style={{ marginBottom: "20px" }}>
         <Link href="/">🏠 Beranda</Link> |{" "}
