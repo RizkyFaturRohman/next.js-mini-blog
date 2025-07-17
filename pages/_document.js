@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="google-site-verification" content="kIGqvIXrGV00XEh3mo40UQNSvK4u3EVch0jVZ5Z_S8o" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />
